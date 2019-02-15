@@ -1,0 +1,70 @@
+<div class="row" [formGroup]="formGroup.get('detail')">
+  <div class="col-md-1">
+    <label>Date</label>
+    <input class="form-control form-control-sm datepicker" #dp="bsDatepicker" bsDatepicker [bsConfig]="{dateInputFormat: 'DD-MM-YYYY',containerClass:
+          'theme-blue'}">
+  </div>
+  <div class="col-md-1">
+    <label>Clinic</label>
+    <input class="form-control form-control-sm" type="text">
+  </div>
+  <div class="col-md-1">
+    <label>HE Code</label>
+    <ng-select class="p-0 form-control form-control-sm custom-select" placeholder="Select Code"></ng-select>
+  </div>
+  <div class="col-md-1">
+    <label>Hospital Code</label>
+    <ng-select class="p-0 form-control form-control-sm custom-select" placeholder="Select Code"></ng-select>
+  </div>
+  <div class="col-md-2">
+    <label>Patient Name</label>
+    <input class="form-control form-control-sm" type="text">
+  </div>
+  <div class="col-md-2">
+    <label>Patient NRIC</label>
+    <input class="form-control form-control-sm" type="text">
+  </div>
+  <div class="col-md-2">
+    <label>Payer Name</label>
+    <input class="form-control form-control-sm" type="text">
+  </div>
+  <div class="col-md-2">
+    <label>Payer NRIC</label>
+    <input class="form-control form-control-sm" type="text">
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-md-2">
+    <label>Document Name</label>
+    <input class="form-control form-control-sm" type="text">
+  </div>
+  <div class="col-md-2">
+    <label>Doctor</label>
+    <ng-select class="p-0 form-control form-control-sm custom-select" placeholder="Select Code"></ng-select>
+  </div>
+  <div class="col-md-2">
+    <label>Ref No</label>
+    <input class="form-control form-control-sm" type="text">
+  </div>
+  <div class="col-md-2">
+    <label>Receipt No</label>
+    <input class="form-control form-control-sm" type="text">
+  </div>
+  <div class="col-md-1">
+    <label>Diagnosis Code</label>
+    <input class="form-control form-control-sm" type="text">
+  </div>
+  <div class="col-md-1">
+    <label>Total Amt</label>
+    <input class="form-control form-control-sm" type="text">
+  </div>
+  <div class="col-md-1">
+    <label>Claim Amt</label>
+    <input class="form-control form-control-sm" type="text">
+  </div>
+  <div class="col-md-1">
+    <label>Subsidy Amt</label>
+    <input class="form-control form-control-sm" type="text">
+  </div>
+</div>

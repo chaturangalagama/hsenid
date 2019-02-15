@@ -1,0 +1,35 @@
+<!-- Diagnosis / Prescription : Text Editor and Diagnosis Code Dropdown Selections -->
+<div class="pt-2" id="consultation-note-div">
+    <div class="card mb-0">
+        <div class="card-header d-flex justify-content-between">
+            <span class='font-weight-semi-bold'>Diagnosis/Notes</span>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <app-consultation-notes class="col" [consultationNotes]="visitManagementFormGroup.get('consultationFormGroup').get('consultation').get('consultationNotes')"></app-consultation-notes>
+            </div>
+            <hr>
+            <div class="row mt-3">
+                <app-consultation-diagnosis class="col" [diagnosisIds]="visitManagementFormGroup.get('consultationFormGroup').get('diagnosisIds')"></app-consultation-diagnosis>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Recent Visit -->
+<div class>
+    <div class="card mb-0 ">
+        <div class="card-header d-flex justify-content-between ">
+            <span class='font-weight-semi-bold'>RECENT VISIT</span>
+            <span *ngIf="recentVisit && recentVisit.consultation ">
+                {{ getRecentVisitTime() }}
+            </span>
+        </div>
+        <app-consultation-history-main-container [needRefresh]='needRefresh' [patientInfo]='patientInfo' (copiedPrescription)='copyPrescription($event)' (recentVisitEmitter)='getRecentVisit($event)'></app-consultation-history-main-container>
+    </div>
+</div>
+
+<!-- Clinic Notes -->
+<div class="pt-2 ">
+    <app-clinic-notes [clinicNotes]="visitManagementFormGroup.get('consultationFormGroup').get('consultation').get('clinicNotes')"></app-clinic-notes>
+</div>

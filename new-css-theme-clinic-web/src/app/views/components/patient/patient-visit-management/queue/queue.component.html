@@ -1,0 +1,49 @@
+<div id="queue-div" class="px-0 mx-0">
+    <div *ngIf="!isQueueHidden" class="row queue-header">
+        <div class="col-6 d-flex align-items-center mt-4 mt-md-0">
+            <table>
+                <tbody>
+                    <tr class="text-small">
+                        <td>pre consult</td>
+                        <td>post consult</td>
+                    </tr>
+                    <tr>
+                        <td class="text-vivid-purple">
+                            <h5>{{ preConsultCount }}</h5>
+                        </td>
+                        <td class="text-cerulean">
+                            <h5>{{ postConsultCount }}</h5>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-5 d-flex align-items-center mt-md-0">
+            <!-- <button class="btn btn-small btn-brand-primary">Call Next Patient</button> -->
+        </div>
+        <div class="col-1 d-flex align-items-center mt-4 mt-md-0 bg-white" (click)="btnQueue()">
+            <i class='text-medium icon-left-open'>
+            </i>
+        </div>
+    </div>
+    <div class="row" *ngIf="isQueueHidden" class="row queue-header">
+        <div class="col-6 align-items-center mt-4  pl-1 pr-0  mt-md-0" style="font-size:13px;">
+            <p class="mb-0 text-vivid-purple"><b>{{ preConsultCount }}</b>
+            </p>
+            <p class="mb-0 text-cerulean"><b>{{ postConsultCount }}</b>
+            </p>
+        </div>
+        <div class="col-6 d-flex align-items-center mt-4 mt-md-0 bg-white" (click)="btnQueue()">
+            <i class="icon-right-open"></i>
+        </div>
+    </div>
+
+    <div class="queue-list">
+        <!-- To implement a fixed-width of 50px upon collapse -->
+        <ul class="list-group">
+            <div *ngFor="let item of queueList; let i = index;">
+                <app-queue-item [isCollapsed]='item.id!=selectedPatientIndex' [isQueueHidden]='isQueueHidden' [item]='item' [index]='i' (itemClicked)='reloadPatientDetails($event)'></app-queue-item>
+            </div>
+        </ul>
+    </div>
+</div>

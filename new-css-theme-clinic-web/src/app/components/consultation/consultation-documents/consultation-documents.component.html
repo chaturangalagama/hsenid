@@ -1,0 +1,74 @@
+<!-- TOP SECTION -->
+<form novalidate [formGroup]='consultationDocument'>
+
+    <!-- Version 2 -->
+    <div class="card mb-1 mt-1">
+        <div class="card-header card-header-transparent d-flex justify-content-between">
+            <span class='font-weight-semi-bold'>DOCUMENTS</span>
+        </div>
+        <div *ngFor="let row of flatDocuments; let i=index;">
+            <span *ngIf="i!==0"><hr class="m-0"></span>
+            <div class="p-2">
+                <i class="icon-clipboard-1 cursor-pointer"></i>&nbsp;&nbsp;&nbsp;
+                <span [title]="row.fileName" class='link' (click)="onDownloadNewDocument(row.fileId,row.fileName, row.listType, row.downloadId)" *ngxPermissionsOnly="['ROLE_FILE_DOWNLOAD']">{{ row.fileName }}</span>
+            </div>
+        </div>
+        <div class="text-grey  p-2" *ngIf="flatDocuments && flatDocuments.length===0">
+            <i>No Documents Found.</i>
+        </div>
+    </div>
+
+
+    <!-- Version 1 --------------------------------------------->
+    <!-- Search Section -->
+    <!-- <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label class="mb-0">Search</label>
+                <input type='text' class='form-control form-control-sm' formControlName='searchKey'>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <label class="mb-0">Date Range</label>
+            <input class='form-control form-control-sm' #drp="bsDaterangepicker" bsDaterangepicker [bsConfig]="{rangeInputFormat: 'DD-MM-YYYY',containerClass:'theme-blue'}" placement="left" formControlName="dateRange">
+        </div>
+    </div> -->
+
+    <!-- Main Content -->
+    <!-- <div class="h-100" style="overflow-x:hidden; overflow-y:auto">
+        <ngx-datatable #table class='bootstrap custom-datatable expandable' [headerHeight]="25" [footerHeight]="25" [rowHeight]="30" [rows]='flatDocuments' [limit]="pageLimit" [columnMode]="'flex'">
+            <ngx-datatable-column name="Date" [canAutoResize]=true minWidth="inherit" [flexGrow]=1>
+                <ng-template ngx-datatable-cell-template let-row="row">
+                    <div>
+                        {{row.date}}
+                    </div>
+                </ng-template>
+            </ngx-datatable-column>
+            <ngx-datatable-column name="Document" prop="visitno" minWidth="inherit" [canAutoResize]=true [flexGrow]=2>
+
+                <ng-template ngx-datatable-cell-template let-row="row">
+                    <div [title]="row.fileName" class='link pr-2' (click)="onDownloadNewDocument(row.fileId,row.fileName, row.listType, row.downloadId)" *ngxPermissionsOnly="['ROLE_FILE_DOWNLOAD']">{{ row.fileName }}</div>
+                </ng-template>
+            </ngx-datatable-column>
+            <ngx-datatable-column name="Description" [canAutoResize]=true minWidth="inherit" [flexGrow]=2>
+                <ng-template ngx-datatable-cell-template let-row="row">
+                    <div>
+                        {{row.description}}
+                    </div>
+                </ng-template>
+            </ngx-datatable-column>
+            <ngx-datatable-column name="Type" minWidth="inherit" [flexGrow]=1 headerClass="headerAlignCenter" [canAutoResize]=true>
+                <ng-template ngx-datatable-cell-template let-row="row">
+                    <div class="centerContent">{{ row.type }}</div>
+                </ng-template>
+            </ngx-datatable-column>
+            <ngx-datatable-column name="Size(KB)" minWidth="inherit" [flexGrow]=1 [canAutoResize]=true>
+                <ng-template ngx-datatable-cell-template let-row="row">
+                    <div class="">{{ row.size }}</div>
+                </ng-template>
+            </ngx-datatable-column>
+        </ngx-datatable>
+    </div> -->
+    <!-- End Of Version 1 --------------------------------------------->
+
+</form>

@@ -1,0 +1,256 @@
+#queue-div .queue-header {
+    background-color: white;
+    height: 40px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #dddee0;
+    margin: 0;
+}
+
+#queue-pane {
+    width: auto;
+}
+
+#queue-pane.collapsed {
+    width: 50px;
+}
+
+.item-even {
+    background-color: $pale-grey;
+    padding: 0;
+}
+
+.item-odd {
+    background-color: $pale-grey-two;
+    padding: 0;
+}
+
+.text-small {
+    font-size: 10px;
+}
+
+ul.list-group.list-group-item {
+    margin: 0;
+}
+
+.align-items-center {
+    -ms-flex-align: center!important;
+    align-items: center!important;
+}
+
+.d-flex {
+    display: -ms-flexbox!important;
+    display: flex!important;
+}
+
+.queue-row {
+    border-style: solid;
+    border-color: white;
+    border-width: 1px;
+    display: table;
+    width: 100%;
+    margin: 0 auto;
+    min-height: 50px;
+}
+
+div.row.border.alertsPanel {
+    border-color: #dddee0 !important;
+}
+
+.queue-list {
+    // padding-top: 41px;
+    max-height: calc(100vh - 200px);
+    margin-bottom: 10px;
+    overflow-y: auto;
+}
+
+.queue-number {
+    display: table-cell;
+    width: 20%;
+    vertical-align: middle;
+}
+
+.queue-row table {
+    width: 100%;
+    min-height: 50px;
+}
+
+.queue-row td {
+    width: 50%;
+    overflow: hidden;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.queue-call-button {
+    width: 20%;
+    vertical-align: bottom;
+    margin-bottom: 0;
+    position: absolute;
+    bottom: 0;
+}
+
+.queue-first-element {
+    padding-top: 5px;
+    padding-bottom: 0px;
+}
+
+.queue-last-element {
+    padding-top: 0px;
+    padding-bottom: 5px;
+}
+
+.queue-details {
+    display: table;
+    width: 100%;
+    /* margin: auto; */
+}
+
+// Header
+.app-header-data-title {
+    color: $silver;
+    font-size: 9px;
+}
+
+.app-header-data-info {
+    color: $white;
+    font-weight: 500;
+    font-size: 10px;
+}
+
+.navbar-logo {
+    border-bottom-style: none;
+    height: 80px;
+}
+
+.app-header.navbar .navbar-brand {
+    height: 40px;
+}
+
+.brand-minimized .app-header.navbar .navbar-brand {
+    border-bottom: none;
+}
+
+// Card
+.card-header-transparent {
+    background-color: transparent !important;
+    padding: 0.2rem 0.5rem;
+}
+
+.card-header {
+    // background-color: white!important;
+    // border-style: none;
+}
+
+.card-body-diagnosis {
+    padding: 0.2rem 0.5rem;
+}
+
+// Nav-link
+tabset.consultation .nav-link.active {
+    color: $indigo-100;
+    background-color: transparent;
+    border-bottom-color: $indigo-100;
+    border-bottom-style: solid;
+}
+
+tabset.consultation .nav-pills .nav-link {
+    color: gray;
+    font-weight: 500;
+    padding: 0.725rem 0.8rem;
+}
+
+tabset.consultation {
+    padding-left: 0px;
+}
+
+tabset.consultation.tab-container {
+    width: 100vw;
+}
+
+tabset.consultation div.tab-content .tab-pane {
+    padding: 0;
+}
+
+.list-group-item.selected {
+    background-color: $pale-blue;
+}
+
+tabset.consultation ul.nav.nav-pills {
+    background-color: white;
+    // position: fixed;
+    width: auto;
+    justify-content: left;
+    padding-top: 0px;
+    border-width: 1px;
+    border-bottom-style: solid;
+    border-color: #dddee0;
+    z-index: 10;
+}
+
+tabset.consultation div.tab-content {
+    background-color: $gray-lighter;
+    border-style: none;
+    // height: 100%;
+    // padding-top: 2rem;
+    margin-top: 0px;
+    // padding-top: 20px;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+    // max-height: calc(100vh - 250px);
+    max-height: calc(100vh - 180px);
+    margin-bottom: 10px;
+    padding-bottom: 100px;
+    overflow-y: auto;
+}
+
+.edit-detail-btn {
+    position: fixed;
+    z-index: 20;
+    width: 10%;
+    right: 1.5em;
+    top: 5.3rem;
+    margin-top: 5px;
+    color: white;
+}
+
+.alertsPanel {
+    height: 48px;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+    background-color: white;
+}
+
+//Consultation-Pane
+#consultation-pane {
+    // max-height: 100vh;
+    margin-bottom: 4em;
+    overflow: scroll;
+}
+
+.sidebar.sidebar-brand-main a.nav-link.active {
+    background-color: $barney-purple!important;
+}
+
+.sidebar.sidebar-brand-main a.nav-link:hover {
+    background-color: $barney-purple!important;
+}
+
+.sub-heading-grey {
+    background-color: #f2f2f2;
+    color: black;
+    font-size: 10px;
+    padding: 0.25em;
+}
+
+// Table display
+.hideOverflow {
+    overflow: hidden;
+}
+
+#queue-pane,
+#consultation-pane {
+    display: table-cell;
+}

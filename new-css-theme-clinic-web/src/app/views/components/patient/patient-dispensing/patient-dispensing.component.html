@@ -1,0 +1,37 @@
+<div>
+    <alert></alert>
+    <div class="row">
+        <div class="col-6">
+            <app-clinic-notes [clinicNotes]="chargeFormGroup.get('clinicNoteFormGroup').get('clinicNotes')" [isExpanded]=true></app-clinic-notes>
+        </div>
+        <div class="col-6">
+            <app-payment-overall-charge [overallChargeFormGroup]="chargeFormGroup.get('overallChargeFormGroup')">
+            </app-payment-overall-charge>
+        </div>
+    </div>
+
+    <app-payment-diagnosis [diagnosisFormGroup]="chargeFormGroup.get('diagnosisFormGroup')">
+    </app-payment-diagnosis>
+    <!-- <app-payment-medical-service [medicalServiceFormGroup]="chargeFormGroup.get('medicalServiceFormGroup')">
+    </app-payment-medical-service> -->
+    <app-payment-prescription [prescriptionFormGroup]="chargeFormGroup.get('prescriptionFormGroup')" [errors]='drugErrors'>
+    </app-payment-prescription>
+    <!-- <app-payment-medical-test [medicalTestFormGroup]="chargeFormGroup.get('medicalTestFormGroup')">
+    </app-payment-medical-test>
+    <app-payment-immunization [immunizationFormGroup]="chargeFormGroup.get('immunizationFormGroup')">
+    </app-payment-immunization> -->
+    <!-- <app-payment-referral [referralFormGroup]="chargeFormGroup.get('referralFormGroup')" [itemsFormArray]="chargeFormGroup.get('referralFormGroup').get('referralFormArray')"></app-payment-referral>
+    <app-payment-follow-up [followUpFormGroup]="chargeFormGroup.get('prescriptionFormGroup').get('followUpFormGroup')"></app-payment-follow-up> -->
+    <!-- <app-payment-print [chargeFormGroup]="chargeFormGroup" [patientInfo]="patientInfo" [consultationInfo]="consultationInfo">
+    </app-payment-print> -->
+    <app-payment-coverage-limit [coverageLimitFormGroup]="chargeFormGroup.get('coverageLimitFormGroup')">
+    </app-payment-coverage-limit>
+    <div class="btn-toolbar float-right" role="toolbar">
+        <div class="btn-group" role="group">
+            <button class="btn btn-large btn-brand-secondary" [disabled]="!chargeFormGroup.valid" (click)="onBtnSaveClicked()" (keyup)="onKeyUp($event)">SAVE & NEXT (F4)</button>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+</div>

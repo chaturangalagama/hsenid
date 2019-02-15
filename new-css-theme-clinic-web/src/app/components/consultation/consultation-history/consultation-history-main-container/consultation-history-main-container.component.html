@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <!-- <ng-container *ngIf="histories">
+                <app-consultation-history-item class="w-100" *ngFor="let item of histories;let i=index" (copyPrescription)='copyPrescription($event)' [patientVisitHistory]="item"></app-consultation-history-item>
+                {{ histories | json }} recent visit
+            </ng-container> -->
+            <ng-container *ngIf="recentVisit">
+                <app-consultation-history-item class="w-100" (copyPrescription)='copyPrescription($event)' [patientVisitHistory]="recentVisit"></app-consultation-history-item>
+            </ng-container>
+        </div>
+        <div class="col-6">
+            <app-consultation-documents [needRefresh]="needRefresh"></app-consultation-documents>
+
+            <!-- <div class="row"> -->
+            <!-- <div class="col-6"></div> -->
+            <!-- <div class="row">
+                    <div class="form-group col-md-6 col-sm-12">
+                        <label class="mb-0">Search</label>
+                        <div class="right-inner-addon">
+                            <input type="text" class="form-control form-control-sm" [(ngModel)]='searchKey'>
+                            <i class="icon-search inner-icon"></i>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6 col-sm-12">
+                        <label class="mb-0">Date from</label>
+                        <input type="text" class="form-control form-control-sm datepicker" #drp="bsDaterangepicker" bsDaterangepicker placement="left" [bsConfig]="{rangeInputFormat: 'DD-MM-YYYY',containerClass:'theme-blue'}" [(ngModel)]='dateRange'>
+                    </div>
+                </div> -->
+            <!-- <div class="form-group col-md-3">
+                      <label class="mb-0">Date from</label>
+                      <input type="text " class="form-control form-control-sm datepicker " #dp="bsDatepicker" bsDatepicker [bsConfig]="{dateInputFormat: 'DD-MM-YYYY',containerClass:
+                                    'theme-blue'}" [(ngModel)]='dateFrom' readonly>
+                    </div>
+                    <div class="form-group col-md-3">
+                      <label class="mb-0">Date to</label>
+                      <input type="text " class="form-control form-control-sm datepicker " #dp="bsDatepicker" bsDatepicker [bsConfig]="{dateInputFormat: 'DD-MM-YYYY',containerClass:
+                                    'theme-blue'}" [(ngModel)]='dateTo' readonly>
+                    </div> -->
+            <!-- <div class="col-md-1 col-sm-12 align-self-center">
+                    <button class="btn btn-sm btn-outline-blue" (click)="onSearch()">
+                        <i class="icon-search inner-icon"></i>
+                    </button>
+                </div> -->
+            <!-- </div> -->
+            <!-- <ng-container *ngIf="histories">
+                <app-consultation-history-item class="w-100" *ngFor="let item of histories" (copyPrescription)='copyPrescription($event)' [patientVisitHistory]="item"></app-consultation-history-item>
+            </ng-container> -->
+        </div>
+    </div>
+
+
+
+</div>

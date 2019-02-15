@@ -1,0 +1,21 @@
+<!-- Medical Certificates -->
+<div class="col-md pt-2 ">
+    <app-medical-certificate-items-array [itemsFormArray]="consultationFormGroup.get('medicalCertificates')">
+    </app-medical-certificate-items-array>
+</div>
+
+<!-- Referral -->
+<div class="col-md">
+    <app-payment-referral [referralFormGroup]="consultationFormGroup.get('patientReferral')" [itemsFormArray]="consultationFormGroup.get('patientReferral').get('patientReferrals')"></app-payment-referral>
+</div>
+
+<!-- Follow Up -->
+<div class="col-md">
+    <app-payment-follow-up [followUpFormGroup]="consultationFormGroup.get('consultationFollowup')"></app-payment-follow-up>
+</div>
+
+<!-- Memo -->
+<div class="col-md">
+    <app-consultation-memo [memo]="consultationFormGroup.get('consultation').get('memo')"></app-consultation-memo>
+</div>
+<!-- <button class="btn btn-primary" (click)="onBtnServicesSaveClicked()">Save Medical Services</button> -->

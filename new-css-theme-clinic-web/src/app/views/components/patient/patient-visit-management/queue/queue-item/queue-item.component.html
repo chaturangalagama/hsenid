@@ -1,0 +1,49 @@
+<li [class]='getItemRowClass()'>
+    <div class="queue-row">
+        <div class="text-center  queue-number ">
+            <div>
+                <div>
+                    <div class="mb-0">
+                        <span *ngIf="!urgent" class="text-maroon"> <h5>{{ item.queueNo }}<i class="p-0 icon-flash"></i></h5></span>
+                        <span *ngIf="urgent" class="greyish-brown"><h5>{{ item.queueNo }}</h5></span>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="!isCollapsed && !isQueueHidden" class="text-center bg-brand-secondary text-white queue-call-button">
+                Call
+            </div>
+        </div>
+        <div class="queue-details pl-2" *ngIf="!isQueueHidden" (click)="rowClicked()">
+            <table>
+                <tr>
+                    <td class="queue-first-element">
+                        <a href="" class="font-weight-semi-bold">
+                            {{ item.name }}
+                        </a>
+                    </td>
+                    <td class="queue-first-element">
+                        {{ item.time }}
+                        <span class="text-right"><i [ngClass]="isCollapsed ? 'icon-down-open-big float-right mr-1':'icon-up-open-big float-right mr-1'"></i></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="queue-last-element">{{ item.id }}</td>
+                    <td class="queue-last-element">
+                        <span [class]="getStatusColor(item.status)">
+                                <span class="icon-circle"></span>{{ item.status }}
+                        </span>
+                    </td>
+                </tr>
+            </table>
+            <hr *ngIf="!isCollapsed" class="my-1">
+            <table *ngIf="!isCollapsed">
+                <tr>
+                    <td class="queue-first-element"><span class="font-weight-semi-bold text-blue">P: </span> {{ item.remarks}}</td>
+                </tr>
+                <tr>
+                    <td class="queue-last-element"><span class="font-weight-semi-bold text-blue">R: </span> {{ item.tag}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</li>
